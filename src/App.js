@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
-import { selectName } from './features/counter/userSlice';
-import { useSelector } from "react-redux";
+import { setName, selectName } from './features/counter/userSlice';
+import { useSelector, useDispatch } from "react-redux";
 
 function App() {
 
 const [input, setInput] = useState('');
 const name = useSelector(selectName);
+const dispatch = useDispatch();
+const handleClick = () => {
+  dispatch(setName(input))
+;}
 
   return (
     <div className="App">
@@ -19,7 +23,7 @@ const name = useSelector(selectName);
         onChange={(event) => setInput(event.target.value)}
         type="text"
         />
-        <button>Update name in th Redux store</button>
+        <button onClick= {handleClick}>Update name in th Redux store</button>
         <h1>{name}</h1>
 
         <img src={logo} className="App-logo" alt="logo" />
