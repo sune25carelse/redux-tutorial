@@ -10,6 +10,7 @@ function App() {
 const [input, setInput] = useState('');
 const name = useSelector(selectName);
 const dispatch = useDispatch();
+
 const handleClick = () => {
   dispatch(setName(input))
 ;}
