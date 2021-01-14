@@ -24,7 +24,7 @@ const handleClick = () => {
         onChange={(event) => setInput(event.target.value)}
         type="text"
         />
-        <button onClick= {handleClick}>Update name in th Redux store</button>
+        <button disabled={!input.trim()} onClick= {handleClick}>Update name in th Redux store</button>
         <h1>{name}</h1>
 
         <img src={logo} className="App-logo" alt="logo" />
