@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
-import { selectName } from './features/counter.userSlice';
+import { selectName } from './features/counter/userSlice';
 import { useSelector } from "react-redux";
 
 function App() {
@@ -21,7 +21,7 @@ const name = useSelector(selectName);
         />
         <button>Update name in th Redux store</button>
         <h1>{name}</h1>
-        
+
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
